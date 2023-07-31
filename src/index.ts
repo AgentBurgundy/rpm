@@ -3,12 +3,19 @@ import redisMiddleware from "./caching/redisMiddleware";
 import getPrompt from "./endpoints/getPrompt";
 import getAdvPrompt from "./endpoints/getAdvPrompt";
 import createNewPrompt from "./endpoints/createNewPrompt";
+import RateLimit from "express-rate-limit";
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({ path: `.env.local` });
 
 const app = express();
 
+const limiter = RateLimit({
+  windowMs: Number(process.env.RATE_LIMIT_MINUTES) ?? 1 * 60 * 1000, // 1 minute
+  max: Number(process.env.RATE_LIMIT_MAX_REQUESTS) ?? 100, // 100 requests
+});
+
 app.use(express.json());
+app.use(limiter);
 
 app.get("/", (req, res) => res.status(200).send({ status: "Alive" }));
 
