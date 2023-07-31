@@ -4,6 +4,7 @@
   "description": "The first ever remote prompt management tool",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,10 +19,13 @@
   "homepage": "https://github.com/AgentBurgundy/rpm#readme",
   "devDependencies": {
     "@types/express": "^4.17.17",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
     "tsc": "^2.0.4",
     "typescript": "^5.1.6"
   },
   "dependencies": {
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "mongoose": "^7.4.1",
     "redis": "^4.6.7"
