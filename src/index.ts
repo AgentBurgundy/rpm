@@ -16,7 +16,13 @@ app.post("/getPrompt", redisMiddleware, async (req, res) => {
   }
 
   try {
-    handleGetPrompt(id);
+    const prompt = await handleGetPrompt(id);
+
+    if (!prompt) {
+      res.status(404).json({ message: "Prompt with that ID not found" });
+    }
+
+    res.status(200).json({ prompt });
   } catch (e) {
     console.error("error fetching prompt", e);
   }
