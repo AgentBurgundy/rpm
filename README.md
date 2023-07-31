@@ -1,3 +1,5 @@
+![Logo](./readme.png)
+
 # Remote Prompt Manager (RPM)
 
 No-Code service for handling fetching AI/Chat GPT prompts from a MongoDB instance.
