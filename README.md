@@ -1,12 +1,14 @@
-# The First Ever Remote Prompt Management Open Source Project
+# Remote Prompt Manager (RPM)
 
-### Why does this exist
+No-Code service for handling fetching AI/Chat GPT prompts from a MongoDB instance.
+
+## Why does this exist
 
 Feature flags and remote configuration have spoiled us as developers. We're now finding that as Prompt Engineering gets more and more popular, pushing up code just shouldn't be required for every single prompt change.
 
 It's slow, repetitive, and really just sucks ass.
 
-### How do we solve it
+## How does it work
 
 Imitating the same great joys that feature flag systems gave us in the past.
 
@@ -16,13 +18,13 @@ Imitating the same great joys that feature flag systems gave us in the past.
 
 - A test environment to ensure our prompts are performing as good as we expect them to
 
-### Why is this open source?
+## Why is this open source?
 
 I'm a one man team, and I don't claim to be the smartest engineer in the room. But I'm good at bringing people together.
 
 I think if we all work together, we can build a really cool service to solve all of our wants and desires for prompt engineering.
 
-### Start Contributing!
+## Start Contributing!
 
 Throw up a PR and I'll review it asap. Hopefully as our community grows we can add more trusted contributors to the review list!
 
