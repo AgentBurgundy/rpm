@@ -4,7 +4,7 @@ import { initializeMongoDB, retrievePromptById } from "./mongoDB/mongo";
 export default async function handleGetPrompt(
   id: string
 ): Promise<string | null> {
-  const redisClient = initializeRedis();
+  const redisClient = await initializeRedis();
 
   await initializeMongoDB();
 

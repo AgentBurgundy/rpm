@@ -2,7 +2,7 @@ import { RedisClientType, createClient } from "redis";
 
 let redisClient: RedisClientType | null = null; // start with redisClient as null
 
-export default function initializeRedis() {
+export default async function initializeRedis() {
   if (!redisClient) {
     if (
       !process.env.REDIS_HOST ||
@@ -26,6 +26,8 @@ export default function initializeRedis() {
     redisClient.on("error", function (error: any) {
       console.error("Redis Error: ", error);
     });
+
+    await redisClient.connect(); // Connect to Redis
   }
 
   return redisClient; // Return the client
